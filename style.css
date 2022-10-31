@@ -2,28 +2,44 @@
 
 main{
     display: grid;
-    grid-template-rows: 50% 50%;
+    grid-template-rows: 50vh 50vh;
     grid-template-columns: 100%;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 
 .top-parent {
     background-color: rgb(0, 252, 177);
-    padding: 20px;  
     font-size: 30px;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 
 }
 
 .bottom-parent{
-    display: grid;
-    grid-template-columns: 25% 25% 25%;
+    
     background-color: black;
     color: white;
     text-align: center;
     column-gap: 10%;
-    padding: 4%;
-}
+    grid-row-start: 2;
+    grid-row-end: 3;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 
+
+}
+strong {
+    font-weight: bolder;
+}
 
 .line--break--1{
     border: 12px solid rgb(3, 153, 199);
@@ -39,6 +55,9 @@ main{
     border: 12px solid rgb(3, 252, 177);
 }
 
+.left-child, .middle-child, .right-child {
+    margin: 20px;
+}
 
 
 
@@ -48,4 +67,33 @@ h1{
     text-align: center;
 
 }
-@media (min-width: 576px) { ... }
+@media (max-width: 576px) {
+    main {
+        grid-template-rows: auto;
+    }
+    .top-parent {
+    background-color: rgb(0, 238, 247);
+    padding: 20px;  
+    font-size: 30px;
+    }
+    .bottom-parent{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        height: 100%;
+
+    }
+    .left-child, 
+    .middle-child,
+    .right-child {
+        background-color: white;
+        color: black;
+        margin: 10px;
+        margin-left: 50px;
+        margin-right: 50px;
+        padding-left: 10px;
+        padding-right: 10px;
+       
+
+    }
+ }
